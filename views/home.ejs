@@ -1,0 +1,15 @@
+<%- include("partials/header"); -%>
+
+<h1>Home</h1>
+<p><%= homeContent %></p>
+
+<% homePosts.forEach( post => {       %>
+    <h1><%=post.inputTitle%></h1>
+<%  if(post.inputText.length >= 100){ %>
+      <p><%=post.inputText.substring(0, 100) + " ... "%> <a href="/posts/<%=post.inputTitle%>">Read more</a> </p>
+<%  }else{                            %>
+      <p><%=post.inputText%></p>      
+<%  }                                 %>
+<% });                                %> 
+
+<%- include("partials/footer"); -%>
